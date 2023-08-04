@@ -1,26 +1,7 @@
-import javax.swing.*;
+import javax.swing.JFrame;
 import java.awt.*;
 
-public class Main extends JFrame {
-    public static void main(String[] args) throws Exception {
-        Main window = new Main();
-        System.out.println("Red vs. Blue");
-    }
-
-
-private Main(){
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    Grid grid = new Grid();
-    this.setContentPane(grid);
-    this.pack();
-    this.setVisible( true);
-}
-
-
-
-
-
-public class Cell {
+public class Cell extends JFrame {
 
     private Color color;
  
@@ -40,7 +21,3 @@ public class Cell {
         this.color = color;
     }
 }
-
-
-}
-
