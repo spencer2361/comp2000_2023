@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -10,7 +11,7 @@ import java.util.function.Consumer;
 
 public class Grid {
   Cell[][] cells = new Cell[20][20];
-  
+
   public Grid() {
     for(int i=0; i<cells.length; i++) {
       for(int j=0; j<cells[i].length; j++) {
@@ -18,6 +19,8 @@ public class Grid {
       }
     }
   }
+
+
 
   private char colToLabel(int col) {
     return (char) (col + Character.valueOf('A'));
@@ -43,6 +46,20 @@ public class Grid {
     return cellAtColRow(labelToCol(c), r);
   }
 
+
+  // look at this 
+  // public Optional<Cell> cellAtPoint(Point p) {
+  //   for(int i=0; i < cells.length; i++) {
+  //     for(int j=0; j < cells[i].length; j++) {
+  //       if(cells[i][j].contains(p)) {
+  //         return Optional.of(cells[i][j]);
+  //       }
+  //     }
+  //   }
+  //   return Optional.empty();
+  // }
+
+
   public Optional<Cell> cellAtPoint(Point p) {
     for(int i=0; i < cells.length; i++) {
       for(int j=0; j < cells[i].length; j++) {
@@ -59,6 +76,9 @@ public class Grid {
    * returns `void`) and applies that consumer to each cell in the grid.
    * @param func The `Cell` to `void` function to apply at each spot.
    */
+
+
+   // look at this 
   public void doToEachCell(Consumer<Cell> func) {
     for(int i=0; i < cells.length; i++) {
       for(int j=0; j < cells[i].length; j++) {
@@ -66,6 +86,16 @@ public class Grid {
       }
     }
   }
+
+//   Iterator IterdoToEachCell.(Consumer<Cell> func){
+// while(!IterdoToEachCell.hasNext()>currentRow.size){
+//   while(!IterdoToEachCell.hasNext()>currentColumn.size){
+//     func.accept(cells[i][j]);
+//   }
+// }
+//   }
+
+
 
   public List<Cell> getRadius(Cell from, int size) {
     int i = labelToCol(from.col);
