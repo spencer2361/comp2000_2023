@@ -241,3 +241,4 @@ Your job is to create such an iterator.  It must iterate over every cell in the 
 Your boss has suggested the following new gameplay:  When one character moves on top of another, if they are on *different* teams the character that is moving merges with the character that is in the `Cell` being moved to. The combined player's `moves` will be the maximum `moves` of the two original players. That new "double-character" could then move onto another character to make a "triple-character", etc.  Your boss also thinks that the composite pattern is the way to implement this.
 
 The composite pattern can be quite variable, and it is easy to stray from it in situations where you think it might be useful.  Come up with a design for the above suggestion that _is as close as possible to the composite pattern_.  Explain where it differs and whether you think that matters.  Is your solution a valid composite?
+git l
